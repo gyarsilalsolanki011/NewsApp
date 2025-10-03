@@ -27,25 +27,24 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(onFinished: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
-        val pagerState = rememberPagerState(initialPage = 0) {
-            pages.size
-        }
-        val buttonsState = remember {
-            derivedStateOf {
-                when (pagerState.currentPage) {
-                    0 -> listOf("", "Next")
-                    1 -> listOf("Back", "Next")
-                    2 -> listOf("Back", "Get Started")
-                    else -> listOf("", "")
-                }
+        val pagerState = rememberPagerState(initialPage = 0) { pages.size }
+        val buttonsState = remember { derivedStateOf {
+            when (pagerState.currentPage) {
+                0 -> listOf("", "Next")
+                1 -> listOf("Back", "Next")
+                2 -> listOf("Back", "Get Started")
+                else -> listOf("", "")
             }
-        }
+        } }
+
         HorizontalPager(state = pagerState) { index ->
             OnBoardingPage(page = pages[index])
         }
+
         Spacer(modifier = Modifier.weight(1f))
+
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -62,30 +61,26 @@ fun OnBoardingScreen() {
 
             Row(verticalAlignment = Alignment.CenterVertically) {
                 val scope = rememberCoroutineScope()
-                //Hide the button when the first element of the list is empty
+
                 if (buttonsState.value[0].isNotEmpty()) {
                     NewsTextButton(
                         text = buttonsState.value[0],
                         onClick = {
                             scope.launch {
-                                pagerState.animateScrollToPage(
-                                    page = pagerState.currentPage - 1
-                                )
+                                pagerState.animateScrollToPage(page = pagerState.currentPage - 1)
                             }
-
                         }
                     )
                 }
+
                 NewsButton(
                     text = buttonsState.value[1],
                     onClick = {
                         scope.launch {
-                            if (pagerState.currentPage == 3){
-                                //Navigate to the main screen and save a value in datastore preferences
-                            }else{
-                                pagerState.animateScrollToPage(
-                                    page = pagerState.currentPage + 1
-                                )
+                            if (pagerState.currentPage == pages.size - 1) {
+                                onFinished()
+                            } else {
+                                pagerState.animateScrollToPage(page = pagerState.currentPage + 1)
                             }
                         }
                     }

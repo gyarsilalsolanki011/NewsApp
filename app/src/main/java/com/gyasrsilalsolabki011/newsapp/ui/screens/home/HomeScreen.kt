@@ -46,7 +46,7 @@ fun NewsArticleView(article: Article, modifier: Modifier = Modifier) {
     ) {
         Column {
 
-            AsyncImage(model = article.urlToImage, contentDescription = null, modifier = modifier.fillMaxWidth())
+            AsyncImage(model = article.urlToImage, contentDescription = article.description, modifier = modifier.fillMaxWidth())
             Text(article.title)
         }
     }
