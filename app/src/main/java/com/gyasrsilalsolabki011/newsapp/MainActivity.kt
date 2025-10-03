@@ -11,11 +11,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.gyasrsilalsolabki011.newsapp.ui.theme.NewsAppTheme
 import com.gyasrsilalsolabki011.newsapp.ui.onboarding.OnBoardingScreen
 import com.gyasrsilalsolabki011.newsapp.ui.screens.home.HomeScreen
+import com.gyasrsilalsolabki011.newsapp.ui.theme.NewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,7 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        installSplashScreen()
+        // installSplashScreen()
         setContent {
             NewsAppTheme(
                 dynamicColor = false
