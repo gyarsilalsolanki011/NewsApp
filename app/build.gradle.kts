@@ -84,6 +84,30 @@ dependencies {
     // Coil
     implementation(libs.coil.compose)
 
+    // Accompanist
+    implementation(libs.accompanist.systemuicontroller)
+
+    // Paging 3
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+
+    // Splash Screen Library
+    implementation(libs.androidx.core.splashscreen)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    // Datastore
+    implementation(libs.androidx.datastore.preferences)
+
+    // Compose Foundation
+    implementation(libs.androidx.compose.foundation)
+
+    // Compose Navigation
+    implementation(libs.androidx.navigation.compose)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
