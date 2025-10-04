@@ -1,12 +1,12 @@
 package com.gyasrsilalsolabki011.newsapp.di
 
 import android.app.Application
-import com.gyasrsilalsolabki011.newsapp.data.api.NewsApi
+import com.gyasrsilalsolabki011.newsapp.data.remote.api.NewsApi
 import com.gyasrsilalsolabki011.newsapp.data.manager.LocalUserManagerImpl
 import com.gyasrsilalsolabki011.newsapp.data.repository.NewsRepositoryImpl
-import com.gyasrsilalsolabki011.newsapp.data.usecases.AppEntryUseCases
-import com.gyasrsilalsolabki011.newsapp.data.usecases.ReadAppEntry
-import com.gyasrsilalsolabki011.newsapp.data.usecases.SaveAppEntry
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.app_entry.AppEntryUseCases
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.app_entry.ReadAppEntry
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.app_entry.SaveAppEntry
 import com.gyasrsilalsolabki011.newsapp.domain.manager.LocalUserManager
 import com.gyasrsilalsolabki011.newsapp.domain.repository.NewsRepository
 import dagger.Module

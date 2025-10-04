@@ -1,6 +1,7 @@
 package com.gyasrsilalsolabki011.newsapp.di
 
-import com.gyasrsilalsolabki011.newsapp.data.interceptors.ApiKeyInterceptor
+import com.gyasrsilalsolabki011.newsapp.data.remote.interceptors.ApiKeyInterceptor
+import com.gyasrsilalsolabki011.newsapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,7 +34,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(client: OkHttpClient): Retrofit {
-        return Retrofit.Builder().client(client).baseUrl("https://newsapi.org").addConverterFactory(
+        return Retrofit.Builder().client(client).baseUrl(BASE_URL).addConverterFactory(
             GsonConverterFactory.create()
         ).build()
     }
