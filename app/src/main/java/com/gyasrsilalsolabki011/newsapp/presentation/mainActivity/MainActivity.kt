@@ -19,6 +19,7 @@ import com.gyasrsilalsolabki011.newsapp.presentation.navigation.NavGraph
 import com.gyasrsilalsolabki011.newsapp.ui.theme.NewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             NewsAppTheme(dynamicColor = false) {
                 val isSystemInDarkMode = isSystemInDarkTheme()
-                @Suppress("DEPRECATION") val systemUiColor = rememberSystemUiController()
+                val systemUiColor = rememberSystemUiController()
                 SideEffect {
                     systemUiColor.setSystemBarsColor(
                         color = Color.Transparent,

@@ -16,6 +16,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val appEntryUseCases: AppEntryUseCases
 ): ViewModel() {
+
     private val _splashCondition = mutableStateOf(true)
     val splashCondition: State<Boolean> = _splashCondition
 
@@ -29,7 +30,7 @@ class MainViewModel @Inject constructor(
             }else{
                 _startDestination.value = Route.AppStartNavigation.route
             }
-            delay(200) //Without this delay, the onBoarding screen will show for a momentum.
+            delay(300) //Without this delay, the onBoarding screen will show for a momentum.
             _splashCondition.value = false
         }.launchIn(viewModelScope)
     }

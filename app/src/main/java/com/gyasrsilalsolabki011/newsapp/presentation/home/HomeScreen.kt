@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -26,6 +25,8 @@ import androidx.paging.compose.LazyPagingItems
 import com.gyasrsilalsolabki011.newsapp.R
 import com.gyasrsilalsolabki011.newsapp.domain.models.Article
 import com.gyasrsilalsolabki011.newsapp.presentation.Dimens.MediumPadding1
+import com.gyasrsilalsolabki011.newsapp.presentation.common.ArticlesList
+import com.gyasrsilalsolabki011.newsapp.presentation.common.SearchBar
 import com.gyasrsilalsolabki011.newsapp.presentation.navigation.Route
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -50,14 +51,14 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String) -> Unit) {
             .padding(top = MediumPadding1)
             .statusBarsPadding()
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.ic_logo),
+        /*Image(
+            painter = painterResource(id = R.drawable.ic_news),
             contentDescription = null,
             modifier = Modifier
                 .width(150.dp)
                 .height(30.dp)
                 .padding(horizontal = MediumPadding1)
-        )
+        )*/
 
         Spacer(modifier = Modifier.height(MediumPadding1))
 

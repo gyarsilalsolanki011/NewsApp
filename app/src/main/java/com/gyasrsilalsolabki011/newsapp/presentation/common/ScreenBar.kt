@@ -76,14 +76,17 @@ fun SearchBar(
                 )
             },
             shape = MaterialTheme.shapes.medium,
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = colorResource(id = R.color.input_background),
-                textColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
+            colors = TextFieldDefaults.colors(
+                focusedTextColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
+                unfocusedTextColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
                 cursorColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
-                disabledIndicatorColor = Color.Transparent,
-                errorIndicatorColor = Color.Transparent,
+                focusedContainerColor = colorResource(id = R.color.input_background),
+                unfocusedContainerColor = colorResource(id = R.color.input_background),
+                disabledContainerColor = colorResource(id = R.color.input_background),
                 focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
+                unfocusedIndicatorColor = Color.Transparent,
+                disabledIndicatorColor = Color.Transparent,
+                errorIndicatorColor = Color.Transparent
             ),
             singleLine = true,
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
