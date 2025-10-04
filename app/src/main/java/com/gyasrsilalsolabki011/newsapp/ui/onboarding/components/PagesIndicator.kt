@@ -1,4 +1,4 @@
-package com.gyasrsilalsolabki011.newsapp.ui.components
+package com.gyasrsilalsolabki011.newsapp.ui.onboarding.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

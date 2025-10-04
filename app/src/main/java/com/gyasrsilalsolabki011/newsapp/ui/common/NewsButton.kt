@@ -1,4 +1,4 @@
-package com.gyasrsilalsolabki011.newsapp.ui.components
+package com.gyasrsilalsolabki011.newsapp.ui.common
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button

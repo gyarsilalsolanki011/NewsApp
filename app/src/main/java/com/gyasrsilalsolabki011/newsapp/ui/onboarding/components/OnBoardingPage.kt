@@ -1,4 +1,4 @@
-package com.gyasrsilalsolabki011.newsapp.ui.onboarding
+package com.gyasrsilalsolabki011.newsapp.ui.onboarding.components
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.Image
@@ -19,6 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.gyasrsilalsolabki011.newsapp.R
 import com.gyasrsilalsolabki011.newsapp.ui.Dimens.MediumPadding1
 import com.gyasrsilalsolabki011.newsapp.ui.Dimens.MediumPadding2
+import com.gyasrsilalsolabki011.newsapp.ui.onboarding.Page
+import com.gyasrsilalsolabki011.newsapp.ui.onboarding.pages
 import com.gyasrsilalsolabki011.newsapp.ui.theme.NewsAppTheme
 
 @Composable

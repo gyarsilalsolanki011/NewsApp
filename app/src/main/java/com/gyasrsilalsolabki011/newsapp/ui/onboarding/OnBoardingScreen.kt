@@ -20,14 +20,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gyasrsilalsolabki011.newsapp.ui.Dimens.MediumPadding2
-import com.gyasrsilalsolabki011.newsapp.ui.components.NewsButton
-import com.gyasrsilalsolabki011.newsapp.ui.components.NewsTextButton
-import com.gyasrsilalsolabki011.newsapp.ui.components.PagerIndicator
+import com.gyasrsilalsolabki011.newsapp.ui.common.NewsButton
+import com.gyasrsilalsolabki011.newsapp.ui.common.NewsTextButton
+import com.gyasrsilalsolabki011.newsapp.ui.onboarding.components.PagerIndicator
+import com.gyasrsilalsolabki011.newsapp.ui.onboarding.components.OnBoardingPage
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen(onFinished: () -> Unit) {
+fun OnBoardingScreen(event: (OnBoardingEvent) -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) { pages.size }
         val buttonsState = remember { derivedStateOf {
@@ -78,7 +79,7 @@ fun OnBoardingScreen(onFinished: () -> Unit) {
                     onClick = {
                         scope.launch {
                             if (pagerState.currentPage == pages.size - 1) {
-                                onFinished()
+                                event(OnBoardingEvent.SaveAppEntry)
                             } else {
                                 pagerState.animateScrollToPage(page = pagerState.currentPage + 1)
                             }
