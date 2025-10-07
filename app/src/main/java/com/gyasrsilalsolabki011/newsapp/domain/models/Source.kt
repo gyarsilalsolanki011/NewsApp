@@ -1,9 +1,10 @@
 package com.gyasrsilalsolabki011.newsapp.domain.models
 
-import kotlinx.serialization.Serializable
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-@Serializable
+@Parcelize
 data class Source(
     val id: String,
     val name: String
-)
+) : Parcelable
