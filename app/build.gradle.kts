@@ -1,10 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id ("org.jetbrains.kotlin.plugin.serialization")
     id("org.jetbrains.kotlin.plugin.compose") // ✅ required for Kotlin 2.0+
-    kotlin("plugin.serialization")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
+    id ("kotlin-parcelize")
 }
 
 android {

@@ -20,6 +20,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.gyasrsilalsolabki011.newsapp.R
+import com.gyasrsilalsolabki011.newsapp.domain.models.Article
 import com.gyasrsilalsolabki011.newsapp.presentation.home.HomeScreen
 import com.gyasrsilalsolabki011.newsapp.presentation.home.HomeViewModel
 import com.gyasrsilalsolabki011.newsapp.presentation.navigation.Route
@@ -82,12 +83,24 @@ fun NewsNavigator() {
             startDestination = Route.HomeScreen.route,
             modifier = Modifier.padding(bottom = bottomPadding)
         ) {
-            composable(route = Route.HomeScreen.route) {
+            composable(route = Route.HomeScreen.route) { backStackEntry ->
                 val viewModel: HomeViewModel = hiltViewModel()
                 val articles = viewModel.news.collectAsLazyPagingItems()
                 HomeScreen(
                     articles = articles,
-                    navigate = { it -> navigateToTab(navController = navController, route = it) })
+                    navigateToSearch = {
+                        navigateToTab(
+                            navController = navController,
+                            route = Route.SearchScreen.route
+                        )
+                    },
+                    navigateToDetails = { article ->
+                        navigateToDetails(
+                            navController = navController,
+                            article = article
+                        )
+                    }
+                )
             }
             composable(route = Route.SearchScreen.route) {
                 val viewModel: SearchViewModel = hiltViewModel()
@@ -125,4 +138,11 @@ private fun navigateToTab(navController: NavController, route: String) {
         launchSingleTop = true
         restoreState = true
     }
+}
+
+private fun navigateToDetails(navController: NavController, article: Article){
+    navController.currentBackStackEntry?.savedStateHandle?.set("article", article)
+    navController.navigate(
+        route = Route.DetailsScreen.route
+    )
 }

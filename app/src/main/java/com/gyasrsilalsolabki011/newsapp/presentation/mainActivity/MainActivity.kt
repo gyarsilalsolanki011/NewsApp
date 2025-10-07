@@ -31,6 +31,7 @@ class MainActivity : ComponentActivity() {
         installSplashScreen().apply {
             setKeepOnScreenCondition(condition = { viewModel.splashCondition.value })
         }
+
         setContent {
             NewsAppTheme(dynamicColor = false) {
                 val isSystemInDarkMode = isSystemInDarkTheme()
