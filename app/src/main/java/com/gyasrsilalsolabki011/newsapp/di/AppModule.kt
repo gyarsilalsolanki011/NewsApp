@@ -1,6 +1,7 @@
 package com.gyasrsilalsolabki011.newsapp.di
 
 import android.app.Application
+import com.gyasrsilalsolabki011.newsapp.data.local.NewsDao
 import com.gyasrsilalsolabki011.newsapp.data.manager.LocalUserManagerImpl
 import com.gyasrsilalsolabki011.newsapp.data.remote.api.NewsApi
 import com.gyasrsilalsolabki011.newsapp.data.repository.NewsRepositoryImpl
@@ -9,9 +10,13 @@ import com.gyasrsilalsolabki011.newsapp.domain.repository.NewsRepository
 import com.gyasrsilalsolabki011.newsapp.domain.usecases.app_entry.AppEntryUseCases
 import com.gyasrsilalsolabki011.newsapp.domain.usecases.app_entry.ReadAppEntry
 import com.gyasrsilalsolabki011.newsapp.domain.usecases.app_entry.SaveAppEntry
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.DeleteArticle
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.GetArticle
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.GetArticles
 import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.GetNews
 import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.NewsUseCases
 import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.SearchNews
+import com.gyasrsilalsolabki011.newsapp.domain.usecases.news.UpsertArticle
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,11 +56,16 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsUseCases(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ): NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsDao),
+            deleteArticle = DeleteArticle(newsDao),
+            getArticles = GetArticles(newsDao),
+            getArticle = GetArticle(newsDao)
         )
     }
 }
