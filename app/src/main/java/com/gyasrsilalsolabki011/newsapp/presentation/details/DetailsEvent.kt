@@ -1,7 +1,10 @@
 package com.gyasrsilalsolabki011.newsapp.presentation.details
 
-sealed class DetailsEvent {
+import com.gyasrsilalsolabki011.newsapp.domain.models.Article
 
-    object SaveArticle : DetailsEvent()
+sealed class DetailsEvent {
+    data class UpsertDeleteArticle(val article: Article) : DetailsEvent()
+
+    object RemoveSideEffect : DetailsEvent()
 
 }

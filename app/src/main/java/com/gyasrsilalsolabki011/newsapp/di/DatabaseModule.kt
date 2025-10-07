@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.gyasrsilalsolabki011.newsapp.data.local.NewsDao
 import com.gyasrsilalsolabki011.newsapp.data.local.NewsDatabase
 import com.gyasrsilalsolabki011.newsapp.data.local.NewsTypeConvertor
+import com.gyasrsilalsolabki011.newsapp.utils.Constants.ROOM_DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +24,7 @@ object DatabaseModule {
         return Room.databaseBuilder(
             context = application,
             klass = NewsDatabase::class.java,
-            name = "news_db"
+            name = ROOM_DATABASE_NAME
         ).addTypeConverter(NewsTypeConvertor())
             .fallbackToDestructiveMigration(false)
             .build()
