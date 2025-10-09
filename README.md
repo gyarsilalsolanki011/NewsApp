@@ -10,7 +10,7 @@
 > 📰 **NewsApp** is a fully functional, offline-capable Android news reader built using **Jetpack Compose**, **MVVM**, and **Clean Architecture**.  
 > It integrates **Retrofit**, **Room**, and **Hilt**, offering a modular, testable, and scalable project setup.
 
----
+<br>
 
 ## 🚀 Features
 
@@ -23,55 +23,56 @@
 - 🌗 **Dark/Light theme support**  
 - 🔐 **Serializable models** for navigation safety  
 
----
+<br>
 
 ## 🧩 Tech Stack
-- Language: Kotlin
-- Architecture: Clean Architecture + MVVM
-- UI: Jetpack Compose, Material 3
-- Network: Retrofit, OkHttp Interceptors
-- Database: Room
-- Dependency Injection (DI): Hilt
-- Image Loading: Coil
-- Serialization: Kotlinx Serialization
+1. ***`Language`:*** Kotlin
+2. ***`Architecture`:*** Clean Architecture + MVVM
+3. ***`UI`:*** Jetpack Compose, Material 3
+4. ***`Network`:*** Retrofit, OkHttp Interceptors
+5. ***`Database`:*** Room
+6. ***`Dependency Injection (DI)`:*** Hilt
+7. ***`Image Loading`:*** Coil
+8. ***`Serialization`:*** Kotlinx Serialization
 
----
+<br>
 
 ## 🗂️ Project Structure
 ```markdown
 com.gyarsilalsolabki011.newsapp/
 │
 ├── data/
-│ ├── local/ # Room DB, DAOs, Entities
-│ ├── manager/ # DataStore or Preference Manager
-│ ├── remote/ # API, DTOs, Interceptors, Pagination
-│ └── repository/ # Repository implementations
+│ ├── local/                   # Room DB, DAOs, Entities
+│ ├── manager/                 # Manager Implementations
+│ ├── remote/                  # API, DTOs, Interceptors, Pagination
+│ └── repository/              # Repository implementations
 │
-├── di/ # Hilt/Koin dependency injection modules
+├── di/                        # Hilt/Koin dependency injection modules
 │
 ├── domain/
-│ ├── manager/ # Domain-level managers (if any)
-│ ├── models/ # Core models (Article, Source)
-│ ├── repository/ # Repository interfaces
-│ └── usecases/ # Use case classes (app_entry, news)
+│ ├── manager/                 # DataStore or Preference Manager
+│ ├── models/                  # Core models (Article, Source)
+│ ├── repository/              # Repository interfaces
+│ └── usecases/                # Use case classes (app_entry, news)
 │
 ├── presentation/
-│ ├── bookmark/ # Bookmark screen
-│ ├── common/ # Shared composables
-│ ├── details/ # Article details screen
-│ ├── home/ # Home and headlines UI
-│ ├── mainActivity/ # Main launcher activity
-│ ├── navigation/ # App navigation graph
-│ ├── news_navigation/ # News-specific navigation
-│ ├── onboarding/ # Onboarding flow
-│ ├── search/ # Search screen
-│ └── Dimens/ # Spacing, dimensions
+│ ├── bookmark/                # Bookmark screen
+│ ├── common/                  # Shared composables
+│ ├── details/                 # Article details screen
+│ ├── home/                    # Home and headlines UI
+│ ├── mainActivity/            # Main launcher activity
+│ ├── navigation/              # App navigation graph
+│ ├── news_navigation/         # News-specific navigation
+│ ├── onboarding/              # Onboarding flow
+│ ├── search/                  # Search screen
+│ └── Dimens/                  # Spacing, dimensions
 │
-├── ui.theme/ # Colors, Typography, Shapes
-├── utils/ # Extensions, constants, helpers
-└── NewsApp.kt # Application entry point
+├── ui.theme/                  # Colors, Typography, Shapes
+├── utils/                     # Extensions, constants, helpers
+└── NewsApp.kt                 # Application entry point
 ```
----
+
+<br>
 
 ## ⚙️ Setup
 
@@ -80,26 +81,26 @@ com.gyarsilalsolabki011.newsapp/
    git clone https://github.com/gyarsilalsolanki011/NewsApp.git
    ```
 2. Add API key
-- Obtain an API key from https://newsapi.org
-- Place it in your local.properties or constants file:
-  ```kotlin
-  const val API_KEY = "YOUR_API_KEY"
-  ```
+   - Obtain an API key from https://newsapi.org
+   - Place it in your local.properties or constants file:
+   ```kotlin
+   const val API_KEY = "YOUR_API_KEY"
+   ```
 3. Build & Run
-- Open in Android Studio (Arctic Fox or later)
-- Click ▶️ Run
+   - Open in Android Studio (Arctic Fox or later)
+   - Click ▶️ Run
 
----
+<br>
 
 ## 🧠 Architecture Overview
 
-```
+```mermaid
 graph TD
-    UI[🧩 UI Layer\n(Jetpack Compose)] --> Presentation[🎨 Presentation Layer\n(ViewModels, UI States)]
-    Presentation --> Domain[⚙️ Domain Layer\n(UseCases, Models)]
-    Domain --> Data[💾 Data Layer\n(Repository)]
-    Data --> Remote[🌐 Remote Source\n(Retrofit, API)]
-    Data --> Local[📁 Local Source\n(Room, DataStore)]
+    UI["🧩 UI Layer<br>(Jetpack Compose)"] --> Presentation["🎨 Presentation Layer<br>(ViewModels, UI States)"]
+    Presentation --> Domain["⚙️ Domain Layer<br>(UseCases, Models)"]
+    Domain --> Data["💾 Data Layer<br>(Repository)"]
+    Data --> Remote["🌐 Remote Source<br>(Retrofit, API)"]
+    Data --> Local["📁 Local Source<br>(Room, DataStore)"]
 
     %% Styling
     style UI fill:#82caff,stroke:#0b3d91,stroke-width:2px,color:#fff
@@ -110,7 +111,7 @@ graph TD
     style Local fill:#fdcb6e,stroke:#e17055,stroke-width:2px,color:#000
 ```
 
----
+<br>
 
 ## 📸 Screenshots
 > *(will add app screenshots here)*  
@@ -118,4 +119,27 @@ graph TD
 | Home Screen | Article Details | Saved Articles |
 |--------------|----------------|----------------|
 | ![Home](assets/home.png) | ![Details](assets/details.png) | ![Saved](assets/saved.png) |
+
+<br>
+
+## 📜 License
+
+This project is licensed under the [`MIT-License`](LICENSE) License.
+
+<br>
+
+## 👨‍💻 Developer  
+**`Gyarsilal Solanki`**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230A66C2.svg?logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/gyarsilal-solanki)  🤝  [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/gyarsilalsolanki011)
+
+  
+**`Need Help!`**, Join us: 
+
+[![GitHub Discussions](https://img.shields.io/badge/GitHub-Discussions-181717?logo=github&style=flat-square)](https://github.com/eleven-dev-cafe/cafe-talks/discussions)   
+[![Join WhatsApp Group](https://img.shields.io/badge/WhatsApp-Community-25D366?logo=whatsapp&style=flat-square)](https://chat.whatsapp.com/Fzt4KispCmk0seaPgSvkyX)  
+[![Join Discord](https://img.shields.io/discord/1405808666179014697?color=4CBB17&label=Join%20Us%20on%20Discord&logo=discord&logoColor=blue)](https://discord.gg/Zrc9x3ts)  
+***You can also discuss your ideas, share feedbacks, and coordinate contributions.*** 
+ 
+<br>
 
