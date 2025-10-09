@@ -137,9 +137,8 @@ This project is licensed under the [`MIT-License`](LICENSE) License.
 **`Need Help!`**, Join us: 
 
 [![GitHub Discussions](https://img.shields.io/badge/GitHub-Discussions-181717?logo=github&style=flat-square)](https://github.com/eleven-dev-cafe/cafe-talks/discussions)   
-[![Join WhatsApp Group](https://img.shields.io/badge/WhatsApp-Community-25D366?logo=whatsapp&style=flat-square)](https://chat.whatsapp.com/Fzt4KispCmk0seaPgSvkyX)  
-[![Join Discord](https://img.shields.io/discord/1405808666179014697?color=4CBB17&label=Join%20Us%20on%20Discord&logo=discord&logoColor=blue)](https://discord.gg/Zrc9x3ts)  
-***You can also discuss your ideas, share feedbacks, and coordinate contributions.*** 
- 
-<br>
+
+---
+
+***If you find this project helpful, consider giving it a ⭐ to support!***
 
