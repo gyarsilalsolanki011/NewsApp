@@ -113,12 +113,14 @@ graph TD
 
 <br>
 
-## 📸 Screenshots
-> *(will add app screenshots here)*  
+## 📸 Screenshots 
 
 | Home Screen | Article Details | Saved Articles |
 |--------------|----------------|----------------|
 | ![Home](assets/home.png) | ![Details](assets/details.png) | ![Saved](assets/saved.png) |
+
+> [!NOTE]
+> *(will add app screenshots here)* 
 
 <br>
 
