@@ -115,9 +115,13 @@ graph TD
 
 ## 📸 Screenshots 
 
-| Home Screen                      | Article Details | Saved Articles |
-|----------------------------------|----------------|----------------|
-| ![Home](.github/images/home.png) | ![Details](assets/details.png) | ![Saved](assets/saved.png) |
+## 📱 App Screenshots
+
+| Home Screen                           | Search Screen                             | Article Details                             | Saved Articles                          |
+|---------------------------------------|-------------------------------------------|---------------------------------------------|-----------------------------------------|
+| ![Home](.github/images/home.png)      | ![Search](.github/images/search.png)      | ![Details](.github/images/details.png)      | ![Saved](.github/images/saved.png)      |
+| ![Home](.github/images/home_dark.png) | ![Search](.github/images/search_dark.png) | ![Details](.github/images/details_dark.png) | ![Saved](.github/images/saved_dark.png) |
+
 
 > [!NOTE]
 > *(will add app screenshots here)* 
