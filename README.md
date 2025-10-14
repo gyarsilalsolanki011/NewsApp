@@ -115,9 +115,9 @@ graph TD
 
 ## 📸 Screenshots 
 
-| Home Screen | Article Details | Saved Articles |
-|--------------|----------------|----------------|
-| ![Home](assets/home.png) | ![Details](assets/details.png) | ![Saved](assets/saved.png) |
+| Home Screen                      | Article Details | Saved Articles |
+|----------------------------------|----------------|----------------|
+| ![Home](.github/images/home.png) | ![Details](assets/details.png) | ![Saved](assets/saved.png) |
 
 > [!NOTE]
 > *(will add app screenshots here)* 
